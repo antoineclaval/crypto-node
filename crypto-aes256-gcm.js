@@ -2,7 +2,8 @@
 // Ref for GCM : http://csrc.nist.gov/publications/nistpubs/800-38D/SP-800-38D.pdf
 var crypto = require('crypto'),
   algorithm = 'aes-256-gcm',
-  key = '3zTvzr3p67VC61jmV54rIYu1545x4TlY',
+  // key have to be 32 byte long
+  key = 'rigeupeip5cie6ieloo2keifequohb2C',
   //If you use AES-256 with GCM , the IV size should be 96 bits large. Or 12 byte
   //Ref : http://csrc.nist.gov/publications/nistpubs/800-38D/SP-800-38D.pdf
   iv =  crypto.randomBytes(12);
