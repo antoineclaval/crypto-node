@@ -9,13 +9,11 @@ var crypto = require('crypto'),
     decipher = crypto.createDecipheriv('aes-256-ecb', key, iv),
     chunks = [];
 
-cipher.setAutoPadding(true);
 var toEncrypt = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.";
 var encryptedString = cipher.update( new Buffer(toEncrypt, 'utf8'),'buffer', 'hex');
 encryptedString += cipher.final('hex');
 console.log(toEncrypt,encryptedString);
 
-decipher.setAutoPadding(false);
 var decryptedString = decipher.update( encryptedString,'hex', 'buffer');
 decryptedString += decipher.final('hex');
 console.log(encryptedString,decryptedString);
